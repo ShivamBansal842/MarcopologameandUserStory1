@@ -1,0 +1,25 @@
+Question : when should you use linq in your program?
+
+Answer : It stands for Language Integrated Query. We are using LINQ to Objects and the Objects part is any IEnumerable collection.  
+It enables us to query and manipulate data independently of data soureces. It's like a query language which can query any data source and any transform. 
+It also provides full type safety and compile time checking. 
+LINQ is intended to make it easy to query data sources.NET Framework includes libraries that allow anyone to create a LINQ provider that can query any data source. 
+LINQ providers that make it easy to query specialized data sources.
+
+For Example :
+
+Suppose you have following code :
+
+foreach (Animal animal in Animals)
+{
+    if (animal.Legs == 4)
+    {
+        foundAnimals.Add(animal);
+    }
+}
+return foundAnimals;
+
+You can reduce this code in single line only using LINQ as below:
+
+return Animals.Where(a => a.Legs == 4).ToList();
+
